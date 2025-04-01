@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 const port = 3000
-
 const {engine} = require('express-handlebars')
+const restaurantList = require('./restaurant.json')
 
 // setting template engine
 // 第一個參數是這個樣板引擎的名稱, 第二個參數是放入和此樣板引擎相關的設定。這裡設定了預設的佈局（default layout）需使用名為 main 的檔案。
