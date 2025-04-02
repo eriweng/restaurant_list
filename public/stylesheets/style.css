@@ -4,11 +4,16 @@ header {
 
 .navbar .navbar-brand {
   color: #4592af;
+  display: flex;
+  align-items: center;
+  margin: 5px 0px 20px 10px;
 }
 
 .navbar .navbar-brand:hover {
   color: #226089;
 }
+
+
 
 .banner {
   position: relative;
@@ -20,34 +25,61 @@ header {
   filter: blur(3px);
 }
 
-.search-bar .search-bar-outer {
-  margin: 0 auto;
-  max-width: 680px;
-  background-color: #fce2cf;
-  border-radius: 8px;
-  padding: 20px 30px;
-  border: 0;
-  margin-top: -60px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+.search-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  /* padding: 0 15px; */
 }
 
-.search-bar .search-bar-inner h4 {
-  color: #9b4b4b;
+.search-form {
+  width: 100%;
 }
 
-.form-control::placeholder {
-  color: #aaaaaa;
-  font-size: 0.8rem;
+.search-input-group {
+  display: flex;
+  width: calc(100% - 0.6);
 }
 
-.btn-major {
-  background-color: #9b4b4b;
-  color: white;
+.search-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  /* outline: none; */
 }
 
-.form-control:focus {
-  box-shadow: none;
-  border-color: #ced4da;
+.search-button {
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #f8f8f8;
+}
+.card-container{
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* 兩列等寬 */
+  grid-gap: 20px;
+    /* 卡片之間的間距 */
+
+
+}
+.card-container .row {
+  width: 250px;
+  /* margin: 10px; */
+}
+
+.card-container .text-secondary {
+  text-decoration: none;
 }
 
 .card {
@@ -56,17 +88,29 @@ header {
 
 .card img {
   height: 180px;
+  width: 250px;
 }
 
-.card-title {
+.card-body {
+  padding: 10px;
+}
+
+.card-container .card-title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: black;
+  font-size: medium;
+  margin: auto;
 }
 
 .restaurant-category {
   color: #666666;
   font-size: 0.8rem;
+}
+.card-container .badge {
+  color: black;
+  font-size: small;
 }
 
 .restaurant-show-title {
@@ -80,9 +124,6 @@ header {
 
 @media screen and (max-width: 992px) {
 
-  .card img {
-    height: 115px;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -93,7 +134,12 @@ header {
 }
 
 @media screen and (max-width: 575px) {
-
+  .card-container {
+    grid-template-columns: 1fr 1fr;
+      /* 兩列等寬 */
+      grid-gap: 20px;
+      /* 卡片之間的間距 */
+  }
   .card img {
     height: auto;
   }
